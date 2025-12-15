@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Login - CrowdFund</title>
+   <link rel="stylesheet" href="css/auth.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+   <div class="split-screen">
+      
+      <div class="split-left">
+         <img src="img/login-bg.jfif" alt="Background" class="login-img">
+      </div>
+
+      <div class="split-right">
+         <form action="" class="login__form" id="login__form">
+            <h1 class="login__title">Login</h1>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="email" placeholder="Email" required class="login__input" id="email">
+                  <i class="ri-mail-fill"></i>
+               </div>
+               <div class="login__box">
+                  <input type="password" placeholder="Password" required class="login__input" id="password">
+                  <i class="ri-lock-2-fill"></i>
+               </div>
+            </div>
+
+            <button type="submit" class="login__button">Login</button>
+            <div class="login__register">
+               Don't have an account? <a href="register.html">Register</a>
+            </div>
+         </form>
+      </div>
+
+   </div>
+   
+   <div id="toast"></div>
+   <script src="script/auth.js"></script>
+</body>
+</html>
