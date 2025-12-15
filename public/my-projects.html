@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - CrowdFund</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="css/my-projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🚀 CrowdFund</a>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="my-projects.html">Mes Projets</a>
+                <a href="my-donations.html">Mes Dons</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Mes Projets</h1>
+            <a href="create-project.html" class="btn btn-primary">
+                <i class="ri-add-line"></i> Nouveau projet
+            </a>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be loaded here -->
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <i class="ri-folder-open-line"></i>
+            <h3>Aucun projet pour le moment</h3>
+            <p style="color: #999; margin-bottom: 2rem;">Créez votre premier projet et commencez à collecter des fonds</p>
+            <a href="create-project.html" class="btn btn-primary">
+                <i class="ri-add-line"></i> Créer un projet
+            </a>
+        </div>
+    </div>
+
+    <!-- Update Modal -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-header">Publier une actualité</h3>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label class="form-label">Titre</label>
+                    <input type="text" id="updateTitle" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contenu</label>
+                    <textarea id="updateContent" class="form-textarea" required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeUpdateModal()">Annuler</button>
+                    <button type="submit" class="btn btn-success">Publier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/my-projects.js"></script>
+</body>
+</html>

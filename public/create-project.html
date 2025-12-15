@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un Projet - CrowdFund</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+   <link rel="stylesheet" href="css/create-project.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🚀 CrowdFund</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">
+            <i class="ri-arrow-left-line"></i> Retour
+        </a>
+
+        <div class="page-header">
+            <h1>Créer un nouveau projet</h1>
+            <p>Donnez vie à votre idée et trouvez des contributeurs</p>
+        </div>
+
+        <div class="form-card">
+            <form id="projectForm">
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="ri-information-line"></i>
+                        Informations de base
+                    </h3>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Titre du projet <span class="required">*</span>
+                        </label>
+                        <input type="text" id="title" class="form-input" required>
+                        <div class="help-text">Un titre accrocheur et descriptif</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Description <span class="required">*</span>
+                        </label>
+                        <textarea id="description" class="form-textarea" required></textarea>
+                        <div class="help-text">Expliquez votre projet en détail</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Catégorie <span class="required">*</span>
+                        </label>
+                        <select id="category" class="form-select" required>
+                            <option value="">Choisir une catégorie</option>
+                            <option value="Technologie">Technologie</option>
+                            <option value="Art">Art</option>
+                            <option value="Solidarité">Solidarité</option>
+                            <option value="Jeux">Jeux</option>
+                            <option value="Santé">Santé</option>
+                            <option value="Education">Education</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="ri-money-dollar-circle-line"></i>
+                        Financement
+                    </h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Objectif financier (DH) <span class="required">*</span>
+                            </label>
+                            <input type="number" id="goalAmount" class="form-input" min="100" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Date limite <span class="required">*</span>
+                            </label>
+                            <input type="date" id="deadline" class="form-input" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">
+                        <i class="ri-gift-line"></i>
+                        Récompenses
+                    </h3>
+                    <p class="help-text" style="margin-bottom: 1rem;">
+                        Offrez des récompenses pour encourager les contributions
+                    </p>
+
+                    <div class="rewards-list" id="rewardsList">
+                        <!-- Rewards will be added here -->
+                    </div>
+
+                    <button type="button" class="btn btn-secondary" id="addRewardBtn">
+                        <i class="ri-add-line"></i> Ajouter une récompense
+                    </button>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                        Annuler
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="ri-rocket-line"></i> Créer le projet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/create-project.js"></script>
+</body>
+</html>

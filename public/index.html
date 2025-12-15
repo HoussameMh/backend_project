@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdFund - Plateforme de Financement Participatif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🚀 CrowdFund</a>
+            <div class="nav-links">
+                <a href="index.html">Projets</a>
+                <a href="my-projects.html" id="myProjectsLink" style="display:none;">Mes Projets</a>
+                <a href="my-donations.html" id="myDonationsLink" style="display:none;">Mes Dons</a>
+                <div id="authButtons">
+                    <a href="login.html" class="btn btn-outline">Connexion</a>
+                    <a href="register.html" class="btn btn-primary">Inscription</a>
+                </div>
+                <div id="userMenu" class="user-menu" style="display:none;">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <div class="dropdown" id="dropdown">
+                        <a href="my-projects.html">Mes Projets</a>
+                        <a href="my-donations.html">Mes Dons</a>
+                        <a href="#" id="logoutBtn">Déconnexion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="hero">
+        <h1>Donnez vie à vos idées</h1>
+        <p>Financez des projets innovants ou lancez le vôtre</p>
+        <div class="hero-buttons">
+            <a href="create-project.html" class="btn btn-primary">Créer un projet</a>
+            <a href="#projects" class="btn btn-outline">Découvrir</a>
+        </div>
+    </section>
+
+    
+    <section class="search-section">
+        <div class="search-card">
+            <div class="search-filters">
+                <input type="text" id="searchInput" class="search-input" placeholder="Rechercher un projet...">
+                <select id="categoryFilter" class="search-input">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Technologie">Technologie</option>
+                    <option value="Art">Art</option>
+                    <option value="Solidarité">Solidarité</option>
+                    <option value="Jeux">Jeux</option>
+                    <option value="Santé">Santé</option>
+                    <option value="Education">Education</option>
+                    <option value="Autre">Autre</option>
+                </select>
+                <select id="sortFilter" class="search-input">
+                    <option value="-createdAt">Plus récents</option>
+                    <option value="createdAt">Plus anciens</option>
+                    <option value="-currentAmount">Plus financés</option>
+                    <option value="-backersCount">Plus de contributeurs</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="projects-section" id="projects">
+        <div class="section-header">
+            <h2>Projets en cours</h2>
+        </div>
+        <div id="loadingIndicator" class="loading">
+            <div class="spinner"></div>
+            <p>Chargement des projets...</p>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <script src="script/main.js"></script> 
+   
+</body>
+</html>

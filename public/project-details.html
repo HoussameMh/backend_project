@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Projet - CrowdFund</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="css/projects-details.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🚀 CrowdFund</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">
+            <i class="ri-arrow-left-line"></i> Retour aux projets
+        </a>
+
+        <div id="loadingIndicator" class="loading">
+            <p>Chargement du projet...</p>
+        </div>
+
+        <div id="projectContent" style="display:none;">
+            <div class="project-header">
+                <span class="project-category" id="projectCategory"></span>
+                <h1 class="project-title" id="projectTitle"></h1>
+                <p class="project-creator">Par <strong id="projectCreator"></strong></p>
+
+                <div class="funding-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="currentAmount">0</div>
+                        <div class="stat-label">DH collectés</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="goalAmount">0</div>
+                        <div class="stat-label">DH objectif</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="backersCount">0</div>
+                        <div class="stat-label">contributeurs</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="daysLeft">0</div>
+                        <div class="stat-label">jours restants</div>
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="main-content">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="description">Description</div>
+                        <div class="tab" data-tab="updates">Actualités</div>
+                        <div class="tab" data-tab="backers">Contributeurs</div>
+                    </div>
+
+                    <div class="tab-content active" id="description">
+                        <p id="projectDescription"></p>
+                    </div>
+
+                    <div class="tab-content" id="updates">
+                        <div id="updatesList"></div>
+                    </div>
+
+                    <div class="tab-content" id="backers">
+                        <div id="backersList" class="backers-list"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="rewards-section">
+                        <h3 class="section-title">Récompenses</h3>
+                        <div id="rewardsList"></div>
+                    </div>
+
+                    <div class="donation-form">
+                        <h3 class="section-title">Faire un don</h3>
+                        <form id="donationForm">
+                            <div class="form-group">
+                                <label class="form-label">Montant (DH)</label>
+                                <input type="number" id="donationAmount" class="form-input" min="1" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Contribuer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/projects-details.js"></script>
+</body>
+</html>
