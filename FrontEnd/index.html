@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home-NovaFund</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/nav.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Titan+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+</head>
+</head>
+<body>
+  <main>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-icon">
+            <i class="fa-solid fa-magnifying-glass-dollar fa-xl" style="color:  #2ecc71;"></i>
+          </span>
+          <span class="logo-text">
+            NovaFund
+          </span>
+        </a>
+        
+      </div>
+
+      <div class="middle-nav">
+        <div ><a href="index.html" class="active">Explore</a></div>
+        <div ><a href="">How it works?</a></div>
+        <div ><a href="">About</a></div>
+      </div>
+
+      <div class="right-nav">
+        <div><a href="my-projects.html"  id="myProjectsLink" style="display:none;">My Projects</a></div>
+        <div><a href="my-donations.html" id="myDonationsLink" style="display:none;">My Donations</a></div>
+        <div id="authButtons">
+            <a href="login.html" class="btn btn-outline">Log in</a>
+            <a href="register.html" class="btn btn-primary">Sign up</a>
+        </div>
+        <div class="user-avatar" id="userAvatar" style="display: none;"></div>
+        <a href="#" class="btn btn-outline" id="logoutBtn" style="display: none ; font-size: 16px;">Log out</a>
+      
+      </div>
+    </nav>
+
+    <section class="search-section">
+        <div class="search-card">
+            <div class="search-filters">
+                <input type="text" id="searchInput" class="search-input search" placeholder=" Search for Projects...">
+                <select id="categoryFilter" class="search-input categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Technologie">Technologie</option>
+                    <option value="Art">Art</option>
+                    <option value="Solidarité">Solidarité</option>
+                    <option value="Jeux">Jeux</option>
+                    <option value="Santé">Santé</option>
+                    <option value="Education">Education</option>
+                    <option value="Autre">Autre</option>
+                </select>
+                <select id="sortFilter" class="search-input sortFilter">
+                    <option value="-createdAt">Plus récents</option>
+                    <option value="createdAt">Plus anciens</option>
+                    <option value="-currentAmount">Plus financés</option>
+                    <option value="-backersCount">Plus de contributeurs</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="header">
+      <div class="left-text">
+        <h3 class="slogon">
+          Connecting projects that matter <br>
+          with people who care
+        </h3>
+        <div class="advantages">
+          <span>COMMUNITY SHARES </span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#40ff7b"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/>
+            </svg>
+          <span>PRIZE DRAWS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#40ff7b"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/>
+          </svg>
+          <span>BIG IMPACT</span>
+        </div>
+        <div style="margin-top: 30px;">
+          
+          <a href="create-project.html" class="btn-create">Create Your Project</a>
+        </div>
+      </div>
+      <div class="right-image">
+        <img src="images/header-img.svg" alt="">
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="section-header">
+            <h2>Feautured Projects</h2>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+  </main>
+
+
+
+  <script src="script/main.js"></script>
+  <script src="https://kit.fontawesome.com/086b2bf1b6.js" crossorigin="anonymous"></script> 
+</body>
+</html>

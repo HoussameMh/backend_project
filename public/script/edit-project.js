@@ -13,11 +13,9 @@
             window.location.href = 'my-projects.html';
         }
 
-        // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('deadline').min = today;
 
-        // Fetch project details
         async function fetchProject() {
             try {
                 const response = await fetch(`${API_URL}/projects/${projectId}`);
@@ -37,21 +35,18 @@
             }
         }
 
-        // Populate form with project data
         function populateForm(project) {
             document.getElementById('title').value = project.title;
             document.getElementById('description').value = project.description;
             document.getElementById('category').value = project.category;
             document.getElementById('goalAmount').value = project.goalAmount;
             document.getElementById('currentAmount').value = project.currentAmount;
-            
-            // Format date for input
+
             const deadlineDate = new Date(project.deadline);
             const formattedDate = deadlineDate.toISOString().split('T')[0];
             document.getElementById('deadline').value = formattedDate;
         }
 
-        // Handle form submission
         document.getElementById('projectForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -60,7 +55,7 @@
             const category = document.getElementById('category').value;
             const deadline = document.getElementById('deadline').value;
 
-            // Validate deadline
+           
             const selectedDate = new Date(deadline);
             const currentDate = new Date();
             currentDate.setHours(0, 0, 0, 0);
@@ -101,5 +96,5 @@
             }
         });
 
-        // Initialize
+       
         fetchProject();

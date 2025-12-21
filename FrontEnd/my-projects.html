@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - NovaFund</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <link rel="stylesheet" href="style/my-projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Titan+One&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-icon">
+            <i class="fa-solid fa-magnifying-glass-dollar fa-xl" style="color: #2ecc71;"></i>
+          </span>
+          <span class="logo-text">
+            NovaFund
+          </span>
+        </a>
+      </div>
+
+      <div class="middle-nav">
+        <div ><a href="index.html" >Explore</a></div>
+        <div ><a href="">How it works?</a></div>
+        <div ><a href="">About</a></div>
+      </div>
+
+      <div class="right-nav">
+        <div><a href="my-projects.html"  id="myProjectsLink" class="active">My Projects</a></div>
+        <div><a href="my-donations.html" id="myDonationsLink" >My Donations</a></div>
+        <a href="#" class="btn btn-outline" id="logoutBtn" style="font-size: 18px;">Log out</a>
+      </div>
+    </nav>
+    <div class="container">
+        <div class="page-header">
+            <h1>My Projects</h1>
+            <a href="create-project.html" class="btn1 btn-primary1">
+                <i class="ri-add-line"></i> New Project
+            </a>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <i class="ri-folder-open-line"></i>
+            <h3>No projects yet...</h3>
+            <p style="color: #999; margin-bottom: 2rem;">Create your first project and start fundraising</p>
+            <a href="create-project.html" class="btn1 btn-primary1">
+                <i class="ri-add-line"></i> Create Project
+            </a>
+        </div>
+    </div>
+
+    
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-header">Post a News</h3>
+            <form id="updateForm">
+                <div class="form-group">
+                    <label class="form-label">Title</label>
+                    <input type="text" id="updateTitle" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Content</label>
+                    <textarea id="updateContent" class="form-textarea" required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn1 btn-secondary1" onclick="closeUpdateModal()">Cancel</button>
+                    <button type="submit" class="btn1 btn-success1">Publish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script/my-projects.js"></script>
+    <script src="https://kit.fontawesome.com/086b2bf1b6.js" crossorigin="anonymous"></script> 
+</body>
+</html>

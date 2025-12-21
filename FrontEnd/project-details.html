@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - NovaFund</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <link rel="stylesheet" href="style/projects-details.css">
+    <link rel="stylesheet" href="style/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Titan+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-icon">
+            <i class="fa-solid fa-magnifying-glass-dollar fa-xl" style="color: #2ecc71;"></i>
+          </span>
+          <span class="logo-text">
+            NovaFund
+          </span>
+        </a>
+      </div>
+
+      <div class="middle-nav">
+        <div ><a href="index.html" >Explore</a></div>
+        <div ><a href="">How it works?</a></div>
+        <div ><a href="">About</a></div>
+      </div>
+
+      <div class="right-nav">
+        <div><a href="my-projects.html"  id="myProjectsLink" >My Projects</a></div>
+        <div><a href="my-donations.html" id="myDonationsLink" >My Donations</a></div>
+        <a href="#" class="btn btn-outline" id="logoutBtn" style="font-size: 18px;">Log out</a>
+      </div>
+    </nav>
+
+    <div class="container">
+
+        <div id="projectContent" >
+            <div class="project-header">
+                <span class="project-category" id="projectCategory"></span>
+                <h1 class="project-title" id="projectTitle"></h1>
+                <p class="project-creator">By <strong id="projectCreator"></strong></p>
+
+                <div class="funding-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="currentAmount">0</div>
+                        <div class="stat-label">DH raised</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="goalAmount">0</div>
+                        <div class="stat-label">DH goal</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="backersCount">0</div>
+                        <div class="stat-label">backers</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="daysLeft">0</div>
+                        <div class="stat-label">days left</div>
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="main-content">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="description">Description</div>
+                        <div class="tab" data-tab="updates">Updates</div>
+                        <div class="tab" data-tab="backers">Backers</div>
+                    </div>
+
+                    <div class="tab-content active" id="description">
+                        <p id="projectDescription"></p>
+                    </div>
+
+                    <div class="tab-content" id="updates">
+                        <div id="updatesList"></div>
+                    </div>
+
+                    <div class="tab-content" id="backers">
+                        <div id="backersList" class="backers-list"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="rewards-section">
+                        <h3 class="section-title">Rewards</h3>
+                        <div id="rewardsList"></div>
+                    </div>
+
+                    <div class="donation-form">
+                        <h3 class="section-title">Make a Donation</h3>
+                        <form id="donationForm">
+                            <div class="form-group">
+                                <label class="form-label">Amount (DH)</label>
+                                <input type="number" id="donationAmount" class="form-input" min="50" required>
+                            </div>
+                            <button type="submit" class="btn1 btn-primary1">Contribute</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="toast"></div>
+    <script src="script/projects-details.js"></script>
+    <script src="https://kit.fontawesome.com/086b2bf1b6.js" crossorigin="anonymous"></script> 
+</body>
+</html>

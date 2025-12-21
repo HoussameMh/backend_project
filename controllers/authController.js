@@ -24,7 +24,10 @@ const  login=async (req,res)=>{
     throw new UnauthenticatedError('invalid cridentials')
   }
   const token = user.createJWT()
-  res.status(StatusCodes.OK).json({user:{name:user.name},token})
+  res.status(StatusCodes.OK).json({user:{
+    name:user.name,
+    id:user._id,
+  },token})
 }
 
 module.exports={

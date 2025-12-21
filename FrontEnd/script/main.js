@@ -8,25 +8,21 @@ const API_URL = "http://localhost:3000/api/v1";
             
             if (token) {
                 document.getElementById('authButtons').style.display = 'none';
-                document.getElementById('userMenu').style.display = 'block';
+                document.getElementById('userAvatar').style.display = 'block';
                 document.getElementById('myProjectsLink').style.display = 'block';
                 document.getElementById('myDonationsLink').style.display = 'block';
+                document.getElementById('logoutBtn').style.display='block';
                 
                 const userName = userInfo.name || 'U';
                 document.getElementById('userAvatar').textContent = userName.charAt(0).toUpperCase();
             }
         }
-
-       
-        document.getElementById('userAvatar')?.addEventListener('click', () => {
-            document.getElementById('dropdown').classList.toggle('show');
-        });
-
-        
+ 
         document.getElementById('logoutBtn')?.addEventListener('click', (e) => {
             e.preventDefault();
             localStorage.removeItem('user_token');
             localStorage.removeItem('user_info');
+            localStorage.clear();
             window.location.reload();
         });
 
@@ -56,9 +52,7 @@ const API_URL = "http://localhost:3000/api/v1";
 
         
         function displayProjects(projects) {
-            const grid = document.getElementById('projectsGrid');
-            const loading = document.getElementById('loadingIndicator');
-            loading.style.display = 'none';
+            const grid = document.getElementById('projectsGrid')
 
             if (projects.length === 0) {
                 grid.innerHTML = '<p style="text-align:center; color:#666; grid-column: 1/-1;">Aucun projet trouvé</p>';
@@ -107,13 +101,6 @@ const API_URL = "http://localhost:3000/api/v1";
         document.getElementById('searchInput').addEventListener('input', fetchProjects);
         document.getElementById('categoryFilter').addEventListener('change', fetchProjects);
         document.getElementById('sortFilter').addEventListener('change', fetchProjects);
-
-        
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.user-menu')) {
-                document.getElementById('dropdown')?.classList.remove('show');
-            }
-        });
 
         
         checkAuth();
