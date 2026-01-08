@@ -83,7 +83,7 @@ const  createProject=async (req,res)=>{
 }
 const  updateProject=async (req,res)=>{
   const {
-    body:{title,description,category,deadline},
+    body:{title,description},
     user:{userId},
     params:{id:projectId}
   }=req
@@ -107,7 +107,7 @@ const  deleteProject=async (req,res)=>{
     _id:projectId,createdBy:userId
   })
   if(!project){
-    throw new NotFoundError(`no project with id ${projectId} or ut's not yours`)
+    throw new NotFoundError(`no project with id ${projectId} or it's not yours`)
   }
   
   res.status(StatusCodes.OK).send()

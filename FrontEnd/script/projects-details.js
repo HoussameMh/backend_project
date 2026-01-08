@@ -35,16 +35,14 @@ const API_URL = "http://localhost:3000/api/v1";
         function displayProject(project) {
             document.getElementById('projectCategory').textContent = project.category;
             document.getElementById('projectTitle').textContent = project.title;
-            document.getElementById('projectCreator').textContent = project.createdBy?.name || 'Anonyme';
+            document.getElementById('projectCreator').textContent = project.createdBy?.name ;
             document.getElementById('projectDescription').textContent = project.description;
-
             document.getElementById('currentAmount').textContent = project.currentAmount;
             document.getElementById('goalAmount').textContent = project.goalAmount;
             document.getElementById('backersCount').textContent = project.backersCount || 0;
 
             const daysLeft = Math.ceil((new Date(project.deadline) - new Date()) / (1000 * 60 * 60 * 24));
             document.getElementById('daysLeft').textContent = daysLeft > 0 ? daysLeft : 0;
-
             const percentage = Math.min((project.currentAmount / project.goalAmount) * 100, 100);
             document.getElementById('progressFill').style.width = percentage + '%';
 

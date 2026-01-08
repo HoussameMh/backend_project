@@ -25,15 +25,16 @@ nav a {
   color: #333;
 }
 
-.logo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.logo-text{
-  font-size: 20px;
-  font-weight: 600;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2ecc71;
 }
 
 .middle-nav{
@@ -57,40 +58,35 @@ nav a {
   align-items: center;
 }
 
-.btn{
-  padding: 7px 10px;
-  border-radius: 10px; 
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 14px;
+  transition: all 0.3s;
 }
 
-.btn-primary{
-  background-color:  hsl(0, 0%, 20%);
-  color: white;
-  transition: 0.2s ;
-}
-
-.btn-primary:hover{
-  
-  background-color: hsl(0, 0%, 30%);
-  padding: 8px 12px;
-  border-color:  #000000;
- 
-}
-
-.btn-outline{
+.btn-outline {
   border: 2px solid #ddd;
-  background-color:hsl(0, 0%, 94%);
+  background: white;
 }
 
 .btn-outline:hover {
-    border-color: hsl(0, 0%, 70%);
-    background-color:hsl(0, 0%, 96%) ;
-    padding: 8px 12px;
-    transition: 0.2s ;
+  border-color: #2ecc71;
+  background: #f0fff4;
 }
 
-.active{
+.btn-primary {
+  background: #2ecc71;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+.active2{
   text-decoration: underline;
   text-decoration-color: #2ecc71; ;
   text-decoration-thickness: 4px;

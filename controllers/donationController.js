@@ -13,35 +13,28 @@ const createDonation = async (req, res) => {
   if (!project) {
     throw new NotFoundError(`Pas de projet avec l'id ${projectId}`);
   }
-
   if (new Date(project.deadline) < new Date()) {
     throw new BadRequestError('La collecte pour ce projet est terminée.');
   }
-
-
   if (selectedRewardId) {
     const reward = project.rewards.id(selectedRewardId);
 
     if (!reward) {
       throw new NotFoundError('Récompense introuvable');
     }
-
     if (amount < reward.minAmount) {
       throw new BadRequestError(
         `Pour choisir "${reward.title}", vous devez donner au moins ${reward.minAmount} DH`
       );
     }
-
     if (reward.stock !== null && reward.stock <= 0) {
       throw new BadRequestError('Désolé, cette récompense est en rupture de stock !');
     }
-
     reward.claimers += 1; 
     if (reward.stock !== null) {
       reward.stock -= 1;  
     }
   }
-
   const donation = await Donation.create({
     amount,
     donor: userId,

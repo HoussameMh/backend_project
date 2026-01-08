@@ -45,8 +45,6 @@ const API_URL = "http://localhost:3000/api/v1";
                 displayProjects(allProjects);
             } catch (error) {
                 console.error('Erreur:', error);
-                document.getElementById('loadingIndicator').innerHTML = 
-                    '<p style="color: #e74c3c;">Erreur de chargement des projets</p>';
             }
         }
 
@@ -58,16 +56,15 @@ const API_URL = "http://localhost:3000/api/v1";
                 grid.innerHTML = '<p style="text-align:center; color:#666; grid-column: 1/-1;">Aucun projet trouvé</p>';
                 return;
             }
-
             grid.innerHTML = projects.map(project => {
                 const percentage = Math.min((project.currentAmount / project.goalAmount) * 100, 100);
                 const daysLeft = Math.ceil((new Date(project.deadline) - new Date()) / (1000 * 60 * 60 * 24));
-                
+                const htmlImage = project.imageUrl ? 
+                    `<div class="image"><img src="${project.imageUrl}" alt="${project.title}"></div>` :
+                    `<div class='project-image'><i class="ri-lightbulb-line"></i></div>`;
                 return `
                     <div class="project-card" onclick="window.location.href='project-details.html?id=${project._id}'">
-                        <div class="project-image">
-                            <i class="ri-lightbulb-line"></i>
-                        </div>
+                            ${htmlImage}
                         <div class="project-content">
                             <span class="project-category">${project.category}</span>
                             <h3 class="project-title">${project.title}</h3>

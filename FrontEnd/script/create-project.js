@@ -20,8 +20,7 @@ function showToast(message, type = 'success') {
         setTimeout(() => { toast.className = ""; }, 300);
     }, 3000);
 }
-
-// Set minimum date to today
+// Set minimum date for deadline
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('deadline').min = today;
 
@@ -29,7 +28,6 @@ document.getElementById('deadline').min = today;
 document.getElementById('addRewardBtn').addEventListener('click', () => {
 rewardCount++;
 const rewardsList = document.getElementById('rewardsList');
-
 const rewardHTML = `
     <div class="reward-item" data-reward-id="${rewardCount}">
         <button type="button" class="delete-reward" onclick="deleteReward(${rewardCount})">
@@ -78,6 +76,7 @@ e.preventDefault();
 
 const title = document.getElementById('title').value;
 const description = document.getElementById('description').value;
+const imageUrl = document.getElementById('image').value;
 const category = document.getElementById('category').value;
 const goalAmount = parseFloat(document.getElementById('goalAmount').value);
 const deadline = document.getElementById('deadline').value;
@@ -103,6 +102,7 @@ document.querySelectorAll('.reward-item').forEach(item => {
 const projectData = {
     title,
     description,
+    imageUrl,
     category,
     goalAmount,
     deadline,
@@ -129,7 +129,7 @@ try {
         
     } else {
         showToast(data.message || 'Erreur lors de la création du projet' ,'error');
-    }
+    }   
 } catch (error) {
     console.error('Erreur:', error);
     showToast('Erreur lors de la création du projet','error');

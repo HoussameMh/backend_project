@@ -14,5 +14,21 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.1",
     "nodemon": "^3.1.11"
-  }
+  },
+  "name": "backend_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoussameMh/backend_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HoussameMh/backend_project/issues"
+  },
+  "homepage": "https://github.com/HoussameMh/backend_project#readme"
 }

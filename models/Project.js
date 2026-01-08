@@ -16,6 +16,10 @@ const ProjectSchema = new mongoose.Schema({
     required: true,
     enum: ['Technologie', 'Art', 'Solidarité', 'Jeux', 'Santé','Education' ,'Autre'] 
   },
+  imageUrl: { 
+    type: String, 
+    required: false,
+  },
   
   goalAmount: { type: Number, required: true },
   currentAmount: { type: Number, default: 0 },
